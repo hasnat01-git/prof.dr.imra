@@ -49,3 +49,17 @@ document.querySelector('form').addEventListener('submit', function (e) {
       observer.observe(header);
     }
   });
+
+  const toggleBtn = document.getElementById("toggleDetailsBtn");
+  const detailSection = document.getElementById("service-details");
+
+  toggleBtn.addEventListener("click", function () {
+    if (detailSection.style.display === "none") {
+      detailSection.style.display = "block";
+      toggleBtn.textContent = "Hide Full Service Details";
+    } else {
+      detailSection.style.display = "none";
+      toggleBtn.textContent = "Show Full Service Details";
+    }
+  });
+
