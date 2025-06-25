@@ -78,7 +78,21 @@ h2 {
   gap: 12px;
   margin-top: 20px;
 }
-
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
 .header-btn {
   background-color: #00b4d8;
   color: white;
