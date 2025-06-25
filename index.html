@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,8 +26,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome (replaced CORS-blocked CDN with official fallback) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -48,10 +49,28 @@
       "https://www.instagram.com/drimransaeed",
       "https://youtube.com/@ImranSaeed-nd6gj"
     ],
-    "affiliation": {
-      "@type": "MedicalClinic",
-      "name": "Children ENT Clinic Lahore"
-    }
+    "affiliation": [
+      {
+        "@type": "Hospital",
+        "name": "Doctors Hospital Lahore",
+        "address": "152 G/1 Canal Bank Road, Johar Town, Lahore, Pakistan"
+      },
+      {
+        "@type": "Hospital",
+        "name": "Faisal Hospital",
+        "address": "23 Jail Rd, Shadman 1 Shadman, Lahore, Pakistan"
+      },
+      {
+        "@type": "Hospital",
+        "name": "Ittefaq Hospital",
+        "address": "H-Block Model Town, Lahore, Pakistan"
+      },
+      {
+        "@type": "Hospital",
+        "name": "Evercare Hospital Lahore",
+        "address": "DHA Phase 6, Lahore, Pakistan"
+      }
+    ]
   }
   </script>
 
