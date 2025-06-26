@@ -35,22 +35,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Structured Data -->
-  <script type="application/ld+json">
+   <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best ENT hospital for children in Lahore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children’s Hospital Lahore, under the care of Prof. Dr. Imran Saeed, is among the top hospitals for pediatric ENT care in Lahore."
+      }
+    }
+  ]
+}</script>
+   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Prof. Dr. Imran Saeed",
     "url": "https://childrenent.com",
-    "image": "https://childrenent.com/doctorimra.jpeg",
-    "medicalSpecialty": [
-      "Pediatric Otolaryngology",
-      "Otolaryngology",
-      "ENT Surgery"
-    ],
+    "image": "https://childrenent.com/images/doctor-imran-saeed.jpg",
+    "medicalSpecialty": "Pediatric Otolaryngology",
     "description": "Prof. Dr. Imran Saeed is the top Child ENT Specialist in Lahore with FCPS qualification, 30+ years of experience, and 700+ cochlear implant surgeries.",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Ferozepur Road",
       "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "postalCode": "54600",
       "addressCountry": "PK"
     },
     "telephone": "+923214158026",
@@ -62,27 +75,58 @@
       {
         "@type": "Hospital",
         "name": "Doctors Hospital Lahore",
-        "address": "152 G/1 Canal Bank Road, Johar Town, Lahore, Pakistan"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "152 G/1 Canal Bank Road, Johar Town",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54600",
+          "addressCountry": "PK"
+        },
+        "telephone": "+923214158026"
       },
       {
         "@type": "Hospital",
         "name": "Ittefaq Hospital",
-        "address": "H-Block Model Town, Lahore, Pakistan"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "H-Block Model Town",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54600",
+          "addressCountry": "PK"
+        },
+        "telephone": "+923214158026"
       },
       {
         "@type": "Hospital",
         "name": "Evercare Hospital Lahore",
-        "address": "DHA Phase 6, Lahore, Pakistan"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "DHA Phase 6",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54600",
+          "addressCountry": "PK"
+        },
+        "telephone": "+923214158026"
       },
       {
         "@type": "Hospital",
-        "name": "Children's Hospital Lahore",
-        "address": "Ferozepur Road, Opposite General Hospital, Lahore, Pakistan"
+        "name": "Children’s Hospital Lahore",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ferozepur Road, Nishtar Town",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "54600",
+          "addressCountry": "PK"
+        },
+        "telephone": "+923214158026"
       }
     ]
   }
   </script>
-
   <!-- robots.txt and sitemap.xml should be added to root directory -->
  </head>
 
@@ -396,9 +440,13 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Prof. Dr. Imran Saeed</p>
-      <p>Children’s Hospital • Doctors Hospital • Faisal Hospital • Ittefaq Hospital, Lahore</p>
-    </footer>
+  <p>&copy; 2025 Prof. Dr. Imran Saeed</p>
+  <p><strong>Children’s Hospital:</strong> Ferozepur Road, Lahore, Punjab 54600 | 📞 +92 321 4158026</p>
+  <p><strong>Doctors Hospital:</strong> 152 G/1 Canal Bank Road, Johar Town, Lahore, Punjab 54600 | 📞 +92 321 4158026</p>
+  <p><strong>Ittefaq Hospital:</strong> H‑Block, Model Town, Lahore, Punjab 54600 | 📞 +92 321 4158026</p>
+  <p><strong>Evercare Hospital:</strong> D‑1 Commercial, Nespak Society Phase I, Lahore, Punjab 54600 | 📞 +92 321 4158026</p>
+</footer>
+
 
     <!-- Sticky Appointment Button -->
     <a href="#appointment" class="sticky-button" id="bookButton">Book an Appointment</a>
