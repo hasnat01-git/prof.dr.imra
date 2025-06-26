@@ -40,8 +40,8 @@ document.querySelector('form').addEventListener('submit', function (e) {
         }
       },
       {
-        root: null,       // viewport
-        threshold: 0.1    // 10% visible
+        root: null,       
+        threshold: 0.1    
       }
     );
 
