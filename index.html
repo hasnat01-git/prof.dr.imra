@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all';"/>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
 
   <!-- Structured Data -->
    <script type="application/ld+json">
@@ -406,45 +406,20 @@
 
   <!-- Lectures -->
     <!-- Educational Lectures -->
-    <section id="lectures">
-      <h2>Educational Lectures</h2>
-      <p>
-        Watch Prof. Dr. Imran Saeed's expert talks on ENT care and Cochlear
-        Implants.
-      </p>
-      <div class="video-lectures">
-        <iframe loading="lazy"
-    src="https://www.youtube.com/embed/i1ZsmoSkjMA" 
-    title="Lecture 1" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-</iframe>
-       
-        <iframe loading="lazy"
-          src="https://www.youtube.com/embed/jAuQW8VB0xM"
-          title="Lecture 2"
-          allowfullscreen
-        ></iframe>
-         <iframe loading="lazy"
-          src="https://www.youtube.com/embed/-IXJCI_Ut0g"
-          title="Lecture 3"
-          allowfullscreen
-        ></iframe>
-        <iframe loading="lazy"
-  width="100%" 
-  height="315" 
-  src="https://www.youtube.com/embed/gu6yGE6eP1A" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  allowfullscreen>
-</iframe>
+   <section id="lectures">
+  <h2>Educational Lectures</h2>
+  <p>
+    Watch Prof. Dr. Imran Saeed's expert talks on ENT care and Cochlear Implants.
+  </p>
+  <div class="video-lectures">
+    <div class="youtube-facade" data-id="i1ZsmoSkjMA" aria-label="Lecture 1"></div>
+    <div class="youtube-facade" data-id="jAuQW8VB0xM" aria-label="Lecture 2"></div>
+    <div class="youtube-facade" data-id="-IXJCI_Ut0g" aria-label="Lecture 3"></div>
+    <div class="youtube-facade" data-id="gu6yGE6eP1A" aria-label="Lecture 4"></div>
+  </div>
+</section>
 
-        
 
-      </div>
-    </section>
 
   <!-- Publications -->
   <section id="ebook" class="ebook-section">

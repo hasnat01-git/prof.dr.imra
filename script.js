@@ -1,65 +1,86 @@
-document.querySelector('form').addEventListener('submit', function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  // ✅ Form Submission to WhatsApp
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  const name = encodeURIComponent(this.querySelector('input[placeholder="Your Name"]').value.trim());
-  const phone = encodeURIComponent(this.querySelector('input[placeholder="Phone Number"]').value.trim());
-  const desc = encodeURIComponent(this.querySelector('textarea[placeholder="Describe your concern"]').value.trim());
+      const name = form.querySelector('input[placeholder="Your Name"]').value.trim();
+      const phone = form.querySelector('input[placeholder="Phone Number"]').value.trim();
+      const desc = form.querySelector('textarea[placeholder="Describe your concern"]').value.trim();
 
-  if (!name || !phone) {
-    alert("Please enter your Name and Phone Number.");
-    return;
+      if (!name || !phone) {
+        alert("Please enter your Name and Phone Number.");
+        return;
+      }
+
+      const message = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nDescription: ${desc}`);
+      const whatsappURL = `https://wa.me/923214158026?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    });
   }
 
-  // Use %0A for new lines in URL encoding
-  const message =
-    `Name: ${name}%0A` +
-    `Phone: ${phone}%0A` +
-    `Description: ${desc}`;
-
-  const whatsappNumber = "923214158026"; // Your WhatsApp number (no + sign)
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-
-  window.open(whatsappURL, "_blank");
-});
-
- function showPDF() {
-    document.getElementById("pdfViewer").style.display = "block";
-    // Optional: Scroll into view
-    document.getElementById("pdfViewer").scrollIntoView({ behavior: 'smooth' });}
-
- document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const bookButton = document.getElementById("bookButton");
-
+  // ✅ Sticky "Book Appointment" Button
+  const header = document.querySelector("header");
+  const bookButton = document.getElementById("bookButton");
+  if (header && bookButton) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          bookButton.classList.remove("visible");
-        } else {
-          bookButton.classList.add("visible");
-        }
+        bookButton.classList.toggle("visible", !entry.isIntersecting);
       },
-      {
-        root: null,       
-        threshold: 0.1    
-      }
+      { root: null, threshold: 0.1 }
     );
+    observer.observe(header);
+  }
 
-    if (header) {
-      observer.observe(header);
-    }
-  });
-
+  // ✅ Toggle Service Details
   const toggleBtn = document.getElementById("toggleDetailsBtn");
   const detailSection = document.getElementById("service-details");
 
-  toggleBtn.addEventListener("click", function () {
-    if (detailSection.style.display === "none") {
-      detailSection.style.display = "block";
-      toggleBtn.textContent = "Hide Full Service Details";
-    } else {
-      detailSection.style.display = "none";
-      toggleBtn.textContent = "Show Full Service Details";
-    }
-  });
+  if (toggleBtn && detailSection) {
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = detailSection.style.display === "none" || !detailSection.style.display;
+      detailSection.style.display = isHidden ? "block" : "none";
+      toggleBtn.textContent = isHidden
+        ? "Hide Full Service Details"
+        : "Show Full Service Details";
+    });
+  }
 
+  // ✅ Lazy YouTube Facade Loader
+  document.querySelectorAll(".youtube-facade").forEach((div) => {
+    const videoId = div.dataset.id;
+    if (!videoId) return;
+
+    const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+    const img = new Image();
+    img.src = thumbnail;
+    img.alt = "YouTube Thumbnail";
+    img.loading = "lazy";
+    div.appendChild(img);
+
+    const playBtn = document.createElement("div");
+    playBtn.className = "play-button";
+    div.appendChild(playBtn);
+
+    div.addEventListener("click", () => {
+      div.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+                title="YouTube Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      `;
+    });
+  });
+});
+
+// ✅ Show embedded PDF
+function showPDF() {
+  const viewer = document.getElementById("pdfViewer");
+  if (viewer) {
+    viewer.style.display = "block";
+    viewer.scrollIntoView({ behavior: "smooth" });
+  }
+}
