@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Form Submission to WhatsApp
   const form = document.querySelector("form");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Sticky "Book Appointment" Button
   const header = document.querySelector("header");
   const bookButton = document.getElementById("bookButton");
   if (header && bookButton) {
@@ -33,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(header);
   }
 
-  // ✅ Toggle Service Details
+
   const toggleBtn = document.getElementById("toggleDetailsBtn");
   const detailSection = document.getElementById("service-details");
 
@@ -47,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Lazy YouTube Facade Loader
+
   document.querySelectorAll(".youtube-facade").forEach((div) => {
     const videoId = div.dataset.id;
     if (!videoId) return;
@@ -76,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ✅ Show embedded PDF
+
 function showPDF() {
   const viewer = document.getElementById("pdfViewer");
   if (viewer) {

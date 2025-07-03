@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
     <loc>https://www.childrenentlahore.com/</loc>
     <lastmod>2025-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.childrenentlahore.com/drimran-thumbnail.jpg</video:thumbnail_loc>
+      <video:title>Meet Prof. Dr. Imran Saeed – Pediatric ENT Specialist</video:title>
+      <video:description>Watch Prof. Dr. Imran Saeed talk about children's ENT care, allergy management, and cochlear implants in Lahore.</video:description>
+      <video:content_loc>https://www.childrenentlahore.com/drImran.mp4</video:content_loc>
+      <video:publication_date>2025-07-02</video:publication_date>
+      <video:duration>95</video:duration> <!-- 95 seconds = 1 min 35 sec -->
+    </video:video>
   </url>
 
 </urlset>
